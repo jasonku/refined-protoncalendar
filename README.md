@@ -9,6 +9,9 @@ https://addons.mozilla.org/en-US/firefox/addon/refined-protoncalendar/
 * `j`: Go forward to next date range
 * `k`: Go back to previous date range
 * `t`: Jump to "Today"
+* `1`: Toggle "Day" view
+* `2`: Toggle "Week" view
+* `3`: Toggle "Month" view
 
 ## TODO
 
