@@ -1,4 +1,26 @@
 document.onkeydown = function(evt) {
+  evt = evt || window.event;
+
+  // Save (commmand + S)
+  if (evt.keyCode == 83 && evt.metaKey) {
+    evt.preventDefault();
+    evt.stopPropagation();
+
+    const saveButtonSelectors = [
+      '[data-test-id="create-event-popover:save"]',
+      '[data-test-id="create-event-modal:save"]',
+    ];
+
+    for (let selector of saveButtonSelectors) {
+      let saveButton = document.querySelector(selector);
+
+      if (saveButton) {
+        saveButton.click();
+        break;
+      }
+    }
+  }
+
   let activeElement = document.activeElement;
   const inputs = ['input', 'textarea'];
 
@@ -10,12 +32,11 @@ document.onkeydown = function(evt) {
   }
 
   const selectors = {
+    69: '[data-test-id="event-popover:edit"]', // e
     74: '[data-test-id="calendar-toolbar:next"]', // j
     75: '[data-test-id="calendar-toolbar:previous"]', // k
     84: '[data-test-id="calendar-toolbar:today"]', // t
   };
-
-  evt = evt || window.event;
 
   if (selectors[evt.keyCode]) {
     document.querySelector(selectors[evt.keyCode]).click();
@@ -24,11 +45,31 @@ document.onkeydown = function(evt) {
   // View options (day/week/month)
   const viewOptionSelectors = {
     49: 0, // Day
+    68: 0, // Day
     50: 1, // Week
+    87: 1, // Week
     51: 2, // Month
+    77: 2, // Month
   };
 
   if (viewOptionSelectors[evt.keyCode] >= 0) {
     document.querySelectorAll('[data-test-id="calendar-view:view-options"]')[viewOptionSelectors[evt.keyCode]].click();
+  }
+
+  // Event deletion
+  if (evt.keyCode === 8) { // delete/backspace
+    document.querySelector('[data-test-id="event-popover:delete"]').click();
+  }
+
+  // Confirm event deletion
+  if (evt.keyCode === 13) { // enter
+    let submitButtons = document.querySelectorAll('button[type="submit"]');
+
+    for (let submitButton of submitButtons) {
+      if (submitButton.innerText === 'Delete') {
+        submitButton.click();
+        break;
+      }
+    }
   }
 };
