@@ -21,6 +21,11 @@ document.onkeydown = function(evt) {
     }
   }
 
+  // Close popovers
+  if (evt.keyCode === 27) { // escape
+    document.querySelector('button[title="Close popover"]').click();
+  }
+
   let activeElement = document.activeElement;
   const inputs = ['input', 'textarea'];
 

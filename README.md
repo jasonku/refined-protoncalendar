@@ -15,6 +15,7 @@ https://addons.mozilla.org/en-US/firefox/addon/refined-protoncalendar/
 * `e`: Edit event (when event is selected)
 * `⌘ + s (Mac)`: Save event (when editing or creating event)
 * `Backspace` or `Delete`: Delete event (press `Enter` to confirm)
+* `Escape`: Close popover modal
 
 ## TODO
 
