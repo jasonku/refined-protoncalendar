@@ -39,6 +39,9 @@ document.onkeydown = function(evt) {
   };
 
   if (selectors[evt.keyCode]) {
+    evt.preventDefault();
+    evt.stopPropagation();
+
     document.querySelector(selectors[evt.keyCode]).click();
   }
 
