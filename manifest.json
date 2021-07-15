@@ -3,7 +3,7 @@
   "name": "Refined ProtonCalendar",
   "description": "Implements a number of usability improvements in the ProtonCalendar web app",
   "homepage_url": "https://github.com/jasonku/refined-protoncalendar",
-  "version": "1.0",
+  "version": "1.1",
   "icons": {
     "48": "icons/icon.png",
     "96": "icons/icon@2x.png"
