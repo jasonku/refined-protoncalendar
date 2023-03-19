@@ -13,7 +13,7 @@ https://addons.mozilla.org/en-US/firefox/addon/refined-protoncalendar/
 * `2` or `w`: Toggle "Week" view
 * `3` or `m`: Toggle "Month" view
 * `e`: Edit event (when event is selected)
-* `⌘ + s (Mac)`: Save event (when editing or creating event)
+* `⌘ + s (Mac) or Ctrl + s`: Save event (when editing or creating event)
 * `Backspace` or `Delete`: Delete event (press `Enter` to confirm)
 * `Escape`: Close popover modal
 
