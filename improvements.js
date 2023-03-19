@@ -1,8 +1,8 @@
 document.onkeydown = function(evt) {
   evt = evt || window.event;
 
-  // Save (commmand + S)
-  if (evt.keyCode == 83 && evt.metaKey) {
+  // Save (commmand + S) or (ctrl + S)
+  if (evt.keyCode === 83 && (evt.metaKey || evt.ctrlKey)) {
     evt.preventDefault();
     evt.stopPropagation();
 
