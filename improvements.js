@@ -1,3 +1,5 @@
+console.log('refined-protoncalendar');
+
 document.onkeydown = function(evt) {
   evt = evt || window.event;
 

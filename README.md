@@ -20,6 +20,7 @@ https://addons.mozilla.org/en-US/firefox/addon/refined-protoncalendar/
 ## TODO
 
 * Chrome extension
+* Event durations
 
 ## Credits
 

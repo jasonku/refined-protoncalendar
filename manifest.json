@@ -11,7 +11,7 @@
 
   "content_scripts": [
     {
-      "matches": ["*://calendar.protonmail.com/*"],
+      "matches": ["*://calendar.proton.me/*"],
       "js": ["./improvements.js"]
     }
   ]
