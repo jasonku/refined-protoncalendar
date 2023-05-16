@@ -9,8 +9,8 @@ document.onkeydown = function(evt) {
     evt.stopPropagation();
 
     const saveButtonSelectors = [
-      '[data-test-id="create-event-popover:save"]',
-      '[data-test-id="create-event-modal:save"]',
+      '[data-testid="create-event-popover:save"]',
+      '[data-testid="create-event-modal:save"]',
     ];
 
     for (let selector of saveButtonSelectors) {
@@ -39,10 +39,10 @@ document.onkeydown = function(evt) {
   }
 
   const selectors = {
-    69: '[data-test-id="event-popover:edit"]', // e
-    74: '[data-test-id="calendar-toolbar:next"]', // j
-    75: '[data-test-id="calendar-toolbar:previous"]', // k
-    84: '[data-test-id="calendar-toolbar:today"]', // t
+    69: '[data-testid="event-popover:edit"]', // e
+    74: '[data-testid="calendar-toolbar:next"]', // j
+    75: '[data-testid="calendar-toolbar:previous"]', // k
+    84: '[data-testid="calendar-toolbar:today"]', // t
   };
 
   if (selectors[evt.keyCode]) {
@@ -63,12 +63,12 @@ document.onkeydown = function(evt) {
   };
 
   if (viewOptionSelectors[evt.keyCode] >= 0) {
-    document.querySelectorAll('[data-test-id="calendar-view:view-options"]')[viewOptionSelectors[evt.keyCode]].click();
+    document.querySelectorAll('[data-testid="calendar-view:view-options"]')[viewOptionSelectors[evt.keyCode]].click();
   }
 
   // Event deletion
   if (evt.keyCode === 8) { // delete/backspace
-    document.querySelector('[data-test-id="event-popover:delete"]').click();
+    document.querySelector('[data-testid="event-popover:delete"]').click();
   }
 
   // Confirm event deletion
