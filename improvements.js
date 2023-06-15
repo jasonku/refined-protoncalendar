@@ -81,5 +81,14 @@ document.onkeydown = function(evt) {
         break;
       }
     }
+
+    let updateConfirmationButtons = document.querySelector('.modal-two-footer').querySelectorAll('button');
+
+    for (let button of updateConfirmationButtons) {
+      if (button.innerText === 'Update') {
+        button.click();
+        break;
+      }
+    }
   }
 };
