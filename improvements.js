@@ -63,7 +63,16 @@ document.onkeydown = function(evt) {
   };
 
   if (viewOptionSelectors[evt.keyCode] >= 0) {
-    document.querySelectorAll('[data-testid="calendar-view:view-options"]')[viewOptionSelectors[evt.keyCode]].click();
+    // Find the right dropdown
+    let dropdowns = document.querySelectorAll('[data-testid="dropdown-button"]');
+    for (let dropdown of dropdowns) {
+      if (dropdown.textContent == "Day" || dropdown.textContent == "Week" || dropdown.textContent == "Month") {
+        dropdown.click();
+        document.querySelectorAll('[data-testid="calendar-view:view-options"]')[viewOptionSelectors[evt.keyCode]].click();
+        dropdown.click();
+        break;
+      }
+    }
   }
 
   // Event deletion
