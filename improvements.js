@@ -54,25 +54,18 @@ document.onkeydown = function(evt) {
 
   // View options (day/week/month)
   const viewOptionSelectors = {
-    49: 0, // Day
-    68: 0, // Day
-    50: 1, // Week
-    87: 1, // Week
-    51: 2, // Month
-    77: 2, // Month
+    49: 'view-option-day', // Day
+    68: 'view-option-day', // Day
+    50: 'view-option-week', // Week
+    87: 'view-option-week', // Week
+    51: 'view-option-month', // Month
+    77: 'view-option-month', // Month
   };
 
-  if (viewOptionSelectors[evt.keyCode] >= 0) {
-    // Find the right dropdown
-    let dropdowns = document.querySelectorAll('[data-testid="dropdown-button"]');
-    for (let dropdown of dropdowns) {
-      if (dropdown.textContent == "Day" || dropdown.textContent == "Week" || dropdown.textContent == "Month") {
-        dropdown.click();
-        document.querySelectorAll('[data-testid="calendar-view:view-options"]')[viewOptionSelectors[evt.keyCode]].click();
-        dropdown.click();
-        break;
-      }
-    }
+  if (viewOptionSelectors[evt.keyCode] !== undefined) {
+    document.querySelector('[data-testid="calendar-view:view-options-dropdown"]').click();
+    document.querySelector('[data-testid="' + viewOptionSelectors[evt.keyCode] + '"]').click();
+    document.querySelector('[data-testid="calendar-view:view-options-dropdown"]').click();
   }
 
   // Event deletion
